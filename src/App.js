@@ -6,24 +6,21 @@ import Context from './component/Assignment2/Context';
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
 } from "react-router-dom";
 function App() {
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Header />
-          </Route>
-          <Route  path="/assignment1">
-            <Content />
-          </Route>
-          <Route  path="/assignment2">
-            <Context />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Header />}/>
+  
+          <Route  path="/assignment1" element={<Content />}/>
+            
+          <Route  path="/assignment2" element={<Context />}/>
+            
+        </Routes>
       </Router>
     </div>
   );

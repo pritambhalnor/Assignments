@@ -49,13 +49,13 @@ export default function Content() {
           </div>
 
           <div className='my-5'>
-            <button className='btn btn-outline-success me-2 ' onClick={() => { add() }}>Add </button>
+            <button className='btn btn-outline-success me-2 ' onClick={() => { add() }} disabled={!num1 || !num2}>Add </button>
 
-            <button className='btn btn-outline-success me-2 ' onClick={() => { substract() }}>Substract </button>
+            <button className='btn btn-outline-success me-2 ' onClick={() => { substract() } } disabled={!num1 || !num2} >Substract </button>
 
-            <button className='btn btn-outline-success me-2 ' onClick={() => { multiply() }}>Multiply </button>
+            <button className='btn btn-outline-success me-2 ' onClick={() => { multiply() }} disabled={!num1 || !num2}>Multiply </button>
 
-            <button className='btn btn-outline-success me-2 ' onClick={() => { division() }}>Division </button>
+            <button className='btn btn-outline-success me-2 ' onClick={() => { division() }} disabled={!num1 || !num2}>Division </button>
 
           </div>
           <div>
