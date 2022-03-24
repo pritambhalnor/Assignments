@@ -46,7 +46,7 @@ export default function Context() {
     return (
         <div>
             <Addtodos addTodo={addTodo} />
-            <Todos todos={todos} onDelete={onDelete} />
+            <Todos todos={todos}  onDelete={onDelete} />
         </div>
     )
 }
