@@ -7,12 +7,13 @@ export default function Todos(props) {
 
   const clear=()=>{
     window.localStorage.clear();
-    // window.location = '/assignment2';
-    navigate('/assignment2');
+    window.location = '/assignment2';
+    // navigate('/');
   }
   
   return (
     <div className="container" >
+      {/* {props.todos.map((toodo)=>{})} */}
       <button className='btn-sm btn-danger' onClick={()=>{clear()}} disabled={props.todos.length===0}>Clear All</button> <br />
       
      {props.todos.length===0?  "No First & Last Names to display":

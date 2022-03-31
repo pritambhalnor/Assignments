@@ -9,23 +9,23 @@ export default function Content() {
 
 
   const add = () => {
-    // console.log( parseInt(num1) + parseInt(num2) );
-    settotal(parseInt(num1) + parseInt(num2));
+    // console.log( parseFloat(num1) + parseFloat(num2) );
+    settotal(parseFloat(num1) + parseFloat(num2));
   }
 
   const substract = () => {
-    // console.log( parseInt(num1) + parseInt(num2) );
-    settotal(parseInt(num1) - parseInt(num2));
+    // console.log( parseFloat(num1) + parseFloat(num2) );
+    settotal(parseFloat(num1) - parseFloat(num2));
   }
 
   const multiply = () => {
-    // console.log( parseInt(num1) + parseInt(num2) );
-    settotal(parseInt(num1) * parseInt(num2));
+    // console.log( parseFloat(num1) + parseFloat(num2) );
+    settotal(parseFloat(num1) * parseFloat(num2));
   }
 
   const division = () => {
-    // console.log( parseInt(num1) + parseInt(num2) );
-    settotal(parseInt(num1) / parseInt(num2));
+    // console.log( parseFloat(num1) + parseFloat(num2) );
+      settotal(parseFloat(num1) / parseFloat(num2));
   }
 
   return (
@@ -51,7 +51,7 @@ export default function Content() {
           <div className='my-5'>
             <button className='btn btn-outline-success me-2 ' onClick={() => { add() }} disabled={!num1 || !num2}>Add </button>
 
-            <button className='btn btn-outline-success me-2 ' onClick={() => { substract() } } disabled={!num1 || !num2} >Substract </button>
+            <button className='btn btn-outline-success me-2 ' onClick={() => { substract() }} disabled={!num1 || !num2} >Substract </button>
 
             <button className='btn btn-outline-success me-2 ' onClick={() => { multiply() }} disabled={!num1 || !num2}>Multiply </button>
 
@@ -59,7 +59,7 @@ export default function Content() {
 
           </div>
           <div>
-            <input type="number" readOnly={true} className="outStyle a" defaultValue={total} />
+            <input type="text" readOnly={true} className="outStyle a" defaultValue={total} />
           </div>
         </div>
       </div>

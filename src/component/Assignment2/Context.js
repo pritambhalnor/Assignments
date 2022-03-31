@@ -4,6 +4,7 @@ import Todos from './Todos';
 
 export default function Context() {
     let initTodo;
+    var a = [];
     if (localStorage.getItem("todos") === null) {
         initTodo = [];
     }
@@ -20,6 +21,7 @@ export default function Context() {
         else {
             sno = todos[todos.length - 1].sno + 1;
         }
+
         const mytodos = {
             sno: sno,
             firstname: firstname,
@@ -31,6 +33,39 @@ export default function Context() {
 
 
     }
+    const checktodos = (firstname, lastname) => {
+        // console.log(todos.length);
+
+        if (todos.length === 0) {
+            addTodo(firstname, lastname);
+            return;
+        }
+        else {
+
+            todos.find((element) => {
+                const check = element.firstname === firstname;
+
+                // console.log('todo',element.firstname,'===',firstname);
+
+                if (check === true) {
+                    a.push(check);
+                }
+                // console.log('a',a);
+                return check;
+
+            });
+            console.log('a out', a);
+            if (a[0] === true) {
+                alert(`${firstname},Already Present In a List`);
+                a = [];
+            }
+            else {
+                addTodo(firstname, lastname);
+            }
+        }
+
+    }
+
     const onDelete = (todo) => {
         setTodos(todos.filter((e) => {
             return e !== todo;
@@ -42,11 +77,11 @@ export default function Context() {
     useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(todos));
     }, [todos]);
-    
+
     return (
         <div>
-            <Addtodos addTodo={addTodo} />
-            <Todos todos={todos}  onDelete={onDelete} />
+            <Addtodos checktodos={checktodos}  />
+            <Todos todos={todos} onDelete={onDelete} />
         </div>
     )
 }
