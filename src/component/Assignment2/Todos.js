@@ -7,8 +7,8 @@ export default function Todos(props) {
 
   const clear=()=>{
     window.localStorage.clear();
-    window.location = '/assignment2';
-    // navigate('/');
+    // window.location = '/assignment2';
+    navigate('/');
   }
   
   return (
